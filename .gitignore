@@ -6,3 +6,6 @@ __pycache__/
 Reviews.csv
 database.sqlite
 *.sqlite
+
+# Downloaded Masakhane data for Dataset B.
+dataset_b/data/

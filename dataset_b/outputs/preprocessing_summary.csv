@@ -1,0 +1,9 @@
+language,version,vocabulary_size,average_words,type_token_ratio,sentiment_cue_rate,accent_variant_groups,deep_method_note,deep_seconds
+English,raw,14238,80.91,0.0352,0.0325,0,,
+English,rule_clean,14088,79.56,0.0354,0.0328,0,,
+English,tfidf_clean,7678,69.81,0.022,0.0373,0,,
+English,deep_clean,7236,92.2,0.0157,0.03,0,xlm-roberta-base multilingual subword tokenizer,23.76
+Yoruba,raw,6341,25.38,0.0801,0.0121,645,,
+Yoruba,rule_clean,6341,25.38,0.0801,0.0121,645,,
+Yoruba,tfidf_clean,3068,24.32,0.0404,0.0125,301,,
+Yoruba,deep_clean,2532,58.36,0.0139,0.0017,221,xlm-roberta-base multilingual subword tokenizer,5.25

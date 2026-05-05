@@ -237,3 +237,42 @@ cost_comparison
 # Transformer sentiment confidence can be used to check whether the cleaned text still carries sentiment clearly. This method is more computationally expensive, so it is best used on smaller samples or with stronger hardware.
 #
 # Overall, rule-based cleaning is the fastest, TF-IDF filtering is moderate in cost, and spaCy/transformer-based preprocessing is slower but gives better language-aware cleaning.
+
+# ## 12. Dataset B: English vs Yoruba Text (Masakhane)
+#
+# The assignment also asks for comparison with an African-language dataset.
+# I handled this as a separate, reproducible section in the same project folder:
+#
+# - Script: `dataset_b/african_language_preprocessing.py`
+# - Report: `dataset_b/outputs/dataset_b_report.md`
+# - Summary tables: `dataset_b/outputs/noise_summary.csv` and
+#   `dataset_b/outputs/preprocessing_summary.csv`
+#
+# Dataset B uses Yoruba text from MasakhaNER, a Masakhane named-entity dataset:
+# https://github.com/masakhane-io/masakhane-ner
+#
+# The separate Dataset B script compares English Amazon reviews with Yoruba text
+# using rule-based cleaning, TF-IDF statistical filtering, and multilingual
+# transformer tokenization. It evaluates visible noise, vocabulary reduction,
+# token consistency, spelling/diacritic variation, sentiment-cue preservation,
+# and computational/linguistic trade-offs.
+
+dataset_b_noise = pd.read_csv("dataset_b/outputs/noise_summary.csv")
+dataset_b_preprocessing = pd.read_csv("dataset_b/outputs/preprocessing_summary.csv")
+
+dataset_b_noise
+
+dataset_b_preprocessing
+
+# ### Dataset B Conclusion
+#
+# English reviews contain more product-review noise such as HTML tags, URLs,
+# punctuation, informal spelling, and repeated characters. Yoruba text from
+# MasakhaNER is cleaner because it is curated, but it introduces multilingual
+# challenges such as diacritics, named entities, morphology, and spelling
+# variation. Rule-based cleaning is fast but must preserve Unicode characters.
+# TF-IDF reduces vocabulary strongly, although it can remove valid low-frequency
+# African-language forms. Multilingual subword tokenization handles unseen words
+# better, but it is more computationally expensive and less readable.
+#
+# The full discussion is saved in `dataset_b/outputs/dataset_b_report.md`.

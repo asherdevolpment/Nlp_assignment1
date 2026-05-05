@@ -1,0 +1,3 @@
+language,documents,html_documents,url_documents,repeated_char_documents,vocabulary_size,average_words,type_token_ratio,accent_variant_groups,top_tokens
+English,5000,1257,87,899,14238,80.91,0.0352,0,"the, i, and, a, it, to, of, is, this, br, in, for"
+Yoruba,3121,0,0,357,6341,25.38,0.0801,645,"tí, ó, ní, àwọn, ọ, ẹ, ti, ń, àti, ṣe, wọ, fún"
