@@ -257,12 +257,33 @@ cost_comparison
 # token consistency, spelling/diacritic variation, sentiment-cue preservation,
 # and computational/linguistic trade-offs.
 
+# Set this to True only when you want to regenerate the Dataset B output files.
+# It may take about a minute because it uses a multilingual transformer tokenizer.
+RUN_DATASET_B = False
+
+if RUN_DATASET_B:
+    import subprocess
+    import sys
+
+    subprocess.run(
+        [sys.executable, "dataset_b/african_language_preprocessing.py"],
+        check=True
+    )
+else:
+    print("Dataset B outputs already generated. Set RUN_DATASET_B = True to rerun.")
+
 dataset_b_noise = pd.read_csv("dataset_b/outputs/noise_summary.csv")
 dataset_b_preprocessing = pd.read_csv("dataset_b/outputs/preprocessing_summary.csv")
+dataset_b_english_examples = pd.read_csv("dataset_b/outputs/english_examples.csv")
+dataset_b_yoruba_examples = pd.read_csv("dataset_b/outputs/yoruba_examples.csv")
 
 dataset_b_noise
 
 dataset_b_preprocessing
+
+dataset_b_english_examples.head()
+
+dataset_b_yoruba_examples.head()
 
 # ### Dataset B Conclusion
 #
