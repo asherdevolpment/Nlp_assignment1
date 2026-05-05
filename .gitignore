@@ -1,0 +1,8 @@
+.venv/
+__pycache__/
+*.py[cod]
+
+# Large local data files; keep these on disk, but do not push them to GitHub.
+Reviews.csv
+database.sqlite
+*.sqlite
